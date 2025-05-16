@@ -14,9 +14,11 @@ class CategoriaProdutoController extends Controller {
 
   async pegarSubcategorias(req, res) {
     const {categoriaId} = req.params;
+
     try {
       const listaSubcategorias = await categoriaProdutoServices.buscarSubCategorias(categoriaId);
       return res.status(200).json(listaSubcategorias);
+
     } catch (error) {
       return res.status(500).json(`${error.message} - Erro ao pegar subcategorias`)
     }
@@ -34,13 +36,16 @@ class CategoriaProdutoController extends Controller {
         subcategorias.length > 0? mensagem += `A categoria ${id} contém subcategoria cadastrada / `: null ;
         produtosPorCategoria.length > 0? mensagem += `A categoria ${id} contém produtos cadastrados`: null ;
         mensagem += ' - Não foi possível excluir categoria'
+
         return res.status(200).json({message:mensagem});
+        
       }else {
         await categoriaProdutoServices.excluiRegistro(id);
         return res.status(200).json({message: `A categoria ${id} foi excluída com sucesso`})
       }
     } catch (error) {
       return res.status(500).json({message: `${error.message} - Erro ao fazer a exclusão`})
+
     }
   }
 }

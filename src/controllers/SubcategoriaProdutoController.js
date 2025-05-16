@@ -20,12 +20,14 @@ class SubcategoriaProdutoController extends Controller {
     for(const produto of produtos) {
       produto.subcategoria_id? produtosId.push(produto.subcategoria_id) : null;
     }
+
     try {
       if(produtosId.includes(Number(id))){
         return res.status(200).json({message: `Existe produto registrado com  a subcategoria ${id} - não é possível fazer a exclusão`})
       }else{
         return await super.exclui(req,res);
       }
+      
     } catch (error) {
       return res.status(500).json({message: `${error.message} - Erro ao excluir subcategoria`})
     }
