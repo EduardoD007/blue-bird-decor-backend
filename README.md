@@ -45,4 +45,6 @@
 <div>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
   <img src="https://img.shields.io/badge/NODE.JS-WHITE?style=for-the-badge&logo=NODE.JS&logoColor=WHITE">
+  <img src="https://img.shields.io/badge/SQLITE3-WHITE?style=for-the-badge&logo=sqlite&logoColor=WHITE">
+  <img src="https://img.shields.io/badge/SEQUELIZE-yellow?style=for-the-badge&logo=SEQUELIZE&logoColor=WHITE&labelColor=YELLOW">
 </div>
